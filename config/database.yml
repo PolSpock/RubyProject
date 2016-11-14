@@ -1,0 +1,23 @@
+development:
+  database: listings_developpment
+  adapter: postgresql
+  username: postgres
+  password: password
+  host: localhost
+  port: 5432
+
+production:
+  database: listings_developpment
+  adapter: postgresql
+  username: postgres
+  password: password
+  host: localhost
+  port: 5432
+
+test:
+  database: listings_developpment
+  adapter: postgresql
+  username: postgres
+  password: password
+  host: localhost
+  port: 5432

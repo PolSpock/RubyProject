@@ -1,0 +1,17 @@
+%h2= "Detail view for Listing"
+%table.table.table-inverse
+  %thead
+    %tr
+      %th Image
+      %th Titre
+      %th Description
+      %th Prix
+      %th Catégorie
+  %tr
+    %td
+      - if @listing.picture
+        = image_tag @listing.picture, width:300
+    %td= @listing.title
+    %td= @listing.description
+    %td= @listing.price
+    %td= @listing.category_id

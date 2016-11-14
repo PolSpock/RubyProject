@@ -1,0 +1,11 @@
+%table.table.table-inverse
+  - @listings.each do |listing|
+    %tr{ :style => "margin-bottom:30px; margin-top:30px" }
+      %td= link_to 'x', listing_path(listing.id), method: :delete, data: { confirm: 'Are you sure ?'}, class: 'btn btn-danger'
+      %td
+        %h3= link_to listing.title, listing_path(listing.id)
+      %td
+        - if listing.picture
+          = image_tag listing.picture, width:300
+      %td= link_to "Infos", listing_path(listing.id), class:'btn btn-info'
+      %td= link_to "Modifier", edit_listing_path(listing.id), class: 'btn btn-warning'
