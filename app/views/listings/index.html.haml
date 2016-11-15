@@ -1,11 +1,18 @@
-%table.table.table-inverse
-  - @listings.each do |listing|
-    %tr{ :style => "margin-bottom:30px; margin-top:30px" }
-      %td= link_to 'x', listing_path(listing.id), method: :delete, data: { confirm: 'Are you sure ?'}, class: 'btn btn-danger'
-      %td
-        %h3= link_to listing.title, listing_path(listing.id)
-      %td
-        - if listing.picture
-          = image_tag listing.picture, width:300
-      %td= link_to "Infos", listing_path(listing.id), class:'btn btn-info'
-      %td= link_to "Modifier", edit_listing_path(listing.id), class: 'btn btn-warning'
+- @listings.each do |listing|
+  .row
+    .col-xs-12.listing
+      %h3= listing.title
+      %p{class: "date"}
+        = l(listing.created_at)
+        %a{href: listings_path(category_id: listing.category_id), class:'category'}
+          %span{class:"badge"}=listing.category.name
+      .row
+        .col-xs-2
+          - if listing.picture
+            = image_tag listing.picture, width:300, class:"img-responsive"
+        .col-xs-10
+          %p= listing.description
+          .clearfix
+            %br
+          %span{class: "price"}= listing.price
+          %a{href: listing_contact_path(listing.id),class:'btn btn-primary pull-right', data: {do: 'showContactModal', user: "#{current_user.try(:id)}", id: listing.id}}= "Contact"

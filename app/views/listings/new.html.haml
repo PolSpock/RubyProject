@@ -1,26 +1,27 @@
-= form_for @listing, multipart: true do |f|
-  - if @listing.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@listing.errors.count, "error")
-        prohibited this listing from being saved:
-      %ul
-        - @listing.errors.full_messages.each do |message|
-          %li= message
-  .input-field
-    = f.label :title
-    = f.text_field :title
-  .input-field
-    = f.label :price
-    = f.number_field :price
-  .input-field
-    = f.label :description
-    = f.text_area :description, :class => 'materialize-textarea'
-  %select{name: 'listing[category_id]'}
-    - Category.all.each do |cat|
-      %option{value: cat.id}= cat.name
-  .input-field
-    = f.label :picture
-    = f.file_field :picture
-  .actions
-    = f.submit 'Envoyer', :class => 'waves-effect waves-light btn'
+.col-xs-8.col-xs-offset-2.well
+  = form_for @listing, multipart: true do |f|
+    - if @listing.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(@listing.errors.count, "error")
+          prohibited this listing from being saved:
+        %ul
+          - @listing.errors.full_messages.each do |message|
+            %li= message
+    .input-field
+      = f.label :title
+      = f.text_field :title
+    .input-field
+      = f.label :price
+      = f.number_field :price
+    .input-field
+      = f.label :description
+      = f.text_area :description, :class => 'materialize-textarea'
+    %select{name: 'listing[category_id]'}
+      - Category.all.each do |cat|
+        %option{value: cat.id}= cat.name
+    .input-field
+      = f.label :picture
+      = f.file_field :picture
+    .actions
+      = f.submit 'Envoyer', :class => 'waves-effect waves-light btn'

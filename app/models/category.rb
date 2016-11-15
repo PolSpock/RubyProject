@@ -1,5 +1,6 @@
 class Category < ApplicationRecord
-  has_many :Listings
 
+  belongs_to :listing
+  belongs_to :user
 
 end

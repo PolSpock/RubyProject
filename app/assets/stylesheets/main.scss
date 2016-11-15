@@ -1,9 +1,9 @@
 body {
-  background-color: #fff;
+  background-color: #fff !important;
   &.home {
-    background: url(asset-path('bg_homepage.jpg')) center center fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: url(asset-path('bg_homepage.jpg')) center center fixed !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
   }
 }
 h1, h2, h3 {

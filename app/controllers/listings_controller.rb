@@ -1,15 +1,19 @@
 class ListingsController < ApplicationController
   def index
-    #
-    @listings= Listing.all
+    # SELECT * FORM LISTINGS WHERE TITLE ILIKE '%keyword%'
 
-    respond_to do |format|
-        format.html
-        format.json { render json: @listings.to_json }
-      end
+    @listings = Listing.search(params)
+
+  end
+
+  def contact
+    Contact.generate(params, current_user)
+
+    render nothing: true
   end
 
   def new
+    redirect_to new_user_session_path unless current_user
     @listing = Listing.new
   end
 
@@ -30,6 +34,7 @@ class ListingsController < ApplicationController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:title, :description, :picture, :price, :category_id)
+      # INJECTION DE DEPENDANCE
+      params.require(:listing).permit(:title, :description, :picture, :price, :category_id).merge(user_id: current_user.id)
     end
 end
