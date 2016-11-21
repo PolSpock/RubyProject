@@ -6,7 +6,7 @@ class Account::UsersController < Account::AccountController
   def update
     @user = User.find(params[:id])
 
-    @user.update_attributes(user_params)
+    @user.update(user_params)
 
     redirect_to account_users_path
 
