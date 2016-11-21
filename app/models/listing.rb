@@ -1,9 +1,10 @@
 class Listing < ApplicationRecord
   mount_uploader :picture, AvatarUploader
 
-  has_many :Contacts
+  has_many :contacts
   belongs_to :category
   belongs_to :user
+  has_many :comments
 
   def self.search(params)
     if params[:category_id]

@@ -1,0 +1,18 @@
+.container
+  .row
+    .col-xs-10.col-xs-offset-1
+      %table{class: "table table-striped"}
+        %thead
+          %tr
+            %th Image
+            %th Price
+            %th Date
+            %th Message
+        %tbody
+          - @messages.each do |f|
+            %tr
+              - if f.listing.picture
+                %td= image_tag f.listing.picture, width:50
+              %td= f.listing.price
+              %td= f.created_at
+              %td= f.message

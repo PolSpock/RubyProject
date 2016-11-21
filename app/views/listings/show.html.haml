@@ -15,3 +15,13 @@
     %td= @listing.description
     %td= @listing.price
     %td= @listing.category_id
+
+.col-xs-12
+  = form_tag account_comments_path, class: 'form' do
+    %textarea{name: 'comment[content]'}
+    = submit_tag 'Submit', class: 'btn btn-warning'
+    %input{name: 'listing_id', type: 'hidden', value: @listing.id}
+
+.col-xs-12
+  - @listing.comments.each do |c|
+    %p= c.message

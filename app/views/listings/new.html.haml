@@ -1,5 +1,7 @@
+.col-xs-8.col-xs-offset-2
+  %h2 Create my listing
 .col-xs-8.col-xs-offset-2.well
-  = form_for @listing, multipart: true do |f|
+  = form_for @listing, :html => {:class => 'new_listing'}, multipart: true do |f|
     - if @listing.errors.any?
       #error_explanation
         %h2

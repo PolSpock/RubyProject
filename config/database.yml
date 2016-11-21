@@ -15,7 +15,7 @@ production:
   port: 5432
 
 test:
-  database: listings_developpment
+  database: listings_test
   adapter: postgresql
   username: postgres
   password: password

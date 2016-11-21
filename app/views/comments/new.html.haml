@@ -1,0 +1,17 @@
+.col-xs-8.col-xs-offset-2
+  %h2 Create comment
+.col-xs-8.col-xs-offset-2.well
+  = form_for @comment, :html => {:class => 'new_listing'}, multipart: true do |f|
+    - if @comment.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(@comment.errors.count, "error")
+          prohibited this listing from being saved:
+        %ul
+          - @comment.errors.full_messages.each do |message|
+            %li= message
+    .input-field
+      = f.label :message
+      = f.text_area :message, :class => 'materialize-textarea'
+    .actions
+      = f.submit 'Envoyer', :class => 'waves-effect waves-light btn'

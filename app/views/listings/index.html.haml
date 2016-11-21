@@ -9,7 +9,8 @@
       .row
         .col-xs-2
           - if listing.picture
-            = image_tag listing.picture, width:300, class:"img-responsive"
+            %a{href: listing_path(listing)}
+              = image_tag listing.picture, width:300, class:"img-responsive"
         .col-xs-10
           %p= listing.description
           .clearfix
