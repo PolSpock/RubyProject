@@ -3,10 +3,10 @@
     %ul.nav.nav-tabs
       %li{:role => "presentation", class: ("active" if current_page?(account_contacts_path))}
         %a{:href => account_contacts_path}
-          %span.translation_missing My Contacts
+          %span= t('account.navs.my_contacts')
       %li{:role => "presentation", class: ("active" if current_page?(account_messages_path))}
         %a{:href => account_messages_path}
-          %span.translation_missing My Messages
+          %span= t('account.navs.my_messages')
       %li{:role => "presentation", class: ("active" if current_page?(account_users_path))}
         %a{:href => account_users_path}
-          %span.translation_missing My Profile
+          %span= t('account.navs.my_profile')

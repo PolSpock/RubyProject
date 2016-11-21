@@ -10,4 +10,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :email, :password, :password_confirmation])
   end
 
+  #def basic_auth
+  #  if Rails.env == 'production'
+  #    authenticate_or_request_with_http_basic do |username|
+  #      username == "ruby" && password == "rails"
+  #    end
+  #  end
+  #end
+
 end

@@ -4,10 +4,10 @@
       %table{class: "table table-striped"}
         %thead
           %tr
-            %th Image
-            %th Price
-            %th Date
-            %th Message
+            %th= t('image')
+            %th= t('price')
+            %th= t('date')
+            %th= t('message')
         %tbody
           - @contacts.each do |f|
             %tr

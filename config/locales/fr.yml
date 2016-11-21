@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
+  comment: "Commentaires"
   main_baseline: "Vous allez trouver"
   search_placeholder: "Que recherchez vous ?"
   search: "Rechercher"
@@ -31,12 +32,16 @@ fr:
     other: "errors"
   your_email: "Votre adresse E-mail"
   your_message: "Votre message"
+  your_password: "Votre mot de passe"
+  your_firstname: "Votre prénom"
+  your_lastname: "Votre nom"
+  your_password_confirmation: "Confirmer votre mot de passe"
   send: "Envoyer"
   save: "Enregistrer"
   choose_category: "Sélectionnez une catégorie"
   my_account: "Mon compte"
   logout: "Déconnexion"
-  sign_in: "Login"
+  sign_in: "Se connecter"
   message: "Message"
   image: "Image"
   price: "Prix"
@@ -52,6 +57,7 @@ fr:
   activerecord:
     attributes:
       listing:
+        details: "Détails"
         title: "Titre de l'annonce"
         description: "Description"
         picture: "Choisissez une image"

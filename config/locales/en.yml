@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  comment: "Comments"
   main_baseline: "You're going to find"
   search_placeholder: "What are you searching for?"
   search: "Search"
@@ -31,6 +32,10 @@ en:
     other: "erreurs"
   your_email: "Your E-mail address"
   your_message: "Your message"
+  your_password: "Your password"
+  your_firstname: "Your first name"
+  your_lastname: "Your last name"
+  your_password_confirmation: "Your password confirmation"
   send: "Send"
   save: "Save"
   choose_category: "Choose a category"
@@ -52,6 +57,7 @@ en:
   activerecord:
     attributes:
       listing:
+        details: "Details"
         title: "Title"
         description: "Description"
         picture: "Choose a picture"

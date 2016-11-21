@@ -1,12 +1,12 @@
-%h2= "Detail view for Listing"
+%h2= t('activerecord.attributes.listing.details')
 %table.table.table-inverse
   %thead
     %tr
-      %th Image
-      %th Titre
-      %th Description
-      %th Prix
-      %th Catégorie
+      %th= t('image')
+      %th= t('activerecord.attributes.listing.title')
+      %th= t('activerecord.attributes.listing.description')
+      %th= t('activerecord.attributes.listing.price')
+      %th= t('activerecord.attributes.listing.category_id')
   %tr
     %td
       - if @listing.picture
@@ -23,5 +23,6 @@
     %input{name: 'listing_id', type: 'hidden', value: @listing.id}
 
 .col-xs-12
+  %h3= t('comment')
   - @listing.comments.each do |c|
     %p= c.message

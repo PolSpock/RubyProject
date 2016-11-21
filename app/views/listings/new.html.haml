@@ -1,5 +1,5 @@
 .col-xs-8.col-xs-offset-2
-  %h2 Create my listing
+  %h2= t('create_listing')
 .col-xs-8.col-xs-offset-2.well
   = form_for @listing, :html => {:class => 'new_listing'}, multipart: true do |f|
     - if @listing.errors.any?
@@ -10,20 +10,22 @@
         %ul
           - @listing.errors.full_messages.each do |message|
             %li= message
-    .input-field
-      = f.label :title
-      = f.text_field :title
-    .input-field
-      = f.label :price
-      = f.number_field :price
-    .input-field
-      = f.label :description
+    .form-group
+      = f.label :title, :class => 'form-label required'
+      = f.text_field :title, :class => 'form-control'
+    .form-group
+      = f.label :choose_category, t('choose_category'), :class => 'form-label required'
+      %select{name: 'listing[category_id]', class: 'form-control'}
+        - Category.all.each do |cat|
+          %option{value: cat.id}= cat.name
+    .form-group
+      = f.label :price, :class => 'form-label required'
+      = f.number_field :price, :class => 'form-control'
+    .form-group
+      = f.label :description, :class => 'form-label required'
       = f.text_area :description, :class => 'materialize-textarea'
-    %select{name: 'listing[category_id]'}
-      - Category.all.each do |cat|
-        %option{value: cat.id}= cat.name
-    .input-field
-      = f.label :picture
-      = f.file_field :picture
+    .form-group
+      = f.label :picture, :class => 'form-label required'
+      = f.file_field :picture, :class => 'form-control'
     .actions
-      = f.submit 'Envoyer', :class => 'waves-effect waves-light btn'
+      = f.submit t('send'), :class => 'waves-effect waves-light btn'

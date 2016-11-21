@@ -15,5 +15,5 @@
           %p= listing.description
           .clearfix
             %br
-          %span{class: "price"}= listing.price
-          %a{href: listing_contact_path(listing.id),class:'btn btn-primary pull-right', data: {do: 'showContactModal', user: "#{current_user.try(:id)}", id: listing.id}}= "Contact"
+          %span{class: "price"}= "€ #{listing.price}"
+          %a{href: listing_contact_path(listing.id),class:'btn btn-primary pull-right', data: {do: 'showContactModal', user: "#{current_user.try(:id)}", id: listing.id}}= t('contact')
