@@ -1,13 +1,13 @@
 RailsAdmin.config do |config|
 
-  config.authenticate_with do
-    warden.authenticate! score: :user
-  end
-  config.current_user_method(&:current_user)
+  #config.authenticate_with do
+  #  warden.authenticate! score: :user
+  #end
+  #config.current_user_method(&:current_user)
 
-  config.authenticate_with do
-    redirect_to root_path unless current_user.try(:is_admin?)
-  end
+  #config.authenticate_with do
+  #  redirect_to root_path unless current_user.try(:is_admin?)
+  #end
 
   ### Popular gems integration
 

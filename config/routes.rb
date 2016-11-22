@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     devise_for :users
     resources :listings, only: [:index, :show, :new, :create]
 
+    resources :pages
+
     namespace :account do
       root 'messages#index'
       resources :messages, only: [:index, :update]
